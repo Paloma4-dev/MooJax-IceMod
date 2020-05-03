@@ -53,16 +53,6 @@ content-box-yellow {
 background-color: #fef5c4;
 border: 1px solid #fadf98;
 }
-menuPrompt {
-font-size: 19px;
-font-family: 'Hammersmith One';
-color: #fcba03;
-flex: 0.2;
-text-align: left;
-margin-top: 10px;
-display: inline-block;
-
-}
 sub {
 font-size: 15px;
 font-family: 'Hammersmith One';
