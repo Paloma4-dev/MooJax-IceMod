@@ -1,5 +1,25 @@
 <html>
 <body>
-<p>Hello World</p>
+  <h1 class="downoald">MooJax & IceMod </h1>
 </body>
+  <script>
+    var styleItem = document.createElement("style");
+styleItem.type = "text/css";
+styleItem.appendChild(document.createTextNode(`
+body {
+  background-color: #fefbd8;
+}
+.downoald {
+font-size: 19px;
+font-family: 'Hammersmith One';
+color: #fcba03;
+flex: 0.2;
+text-align: left;
+margin-top: 10px;
+display: inline-block;
+}
+`))
+document.head.appendChild(styleItem);
+
+  </script>
 </html>
