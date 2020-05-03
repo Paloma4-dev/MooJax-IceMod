@@ -1,2 +1,6 @@
-title: MooJaxee
-description: myCustomAndDetailedDescription
+---
+title: Guía para publicar herramientas digitales
+description: Código para el Desarrollo te permite compartir tu herramienta digital para que gobiernos y ciudadanos puedan utilizarlo para solucionar problemas de desarrollo. 
+relative_permalinks: false
+markdown: kramdown
+url: "https://jack-lal.github.io/MooJax-IceMod/index.html"
