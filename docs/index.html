@@ -2,7 +2,7 @@
 <body>
   <title> MooJax - IceMod </title>
   </meta>
-<center><div id="first" align="right" class="content-box-gray">
+<center><div id="first" align="right" class="modal">
   <div class="modal-content">
   <h1 class="downoald"><u>MooJax & IceMod <u></h1>
     <div class="modal-body">
@@ -29,6 +29,16 @@ body {
 .modal-body {
     padding: 10px 20px;
     background: #D4EAF2;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
 }
 .modal-content {
     margin:auto;
