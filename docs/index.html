@@ -20,14 +20,8 @@
 
   <script>
     //Ok
-    var download = 0;
-    myfunc(){
-     download += 1; 
-    }
-    setInterval(()=>{
-      document.getElementById("counter").value = download
-    }, 100);
-    var styleItem = document.createElement("style");
+var counterr;
+document.getElementById('counter').innerHTML = counterr += 1;
 styleItem.type = "text/css";
 styleItem.appendChild(document.createTextNode(`
 body {
