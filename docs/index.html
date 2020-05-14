@@ -18,14 +18,6 @@
   <div id="clickert"></div>
   <button name="clicker">Download Click Counter!</button>
   <script>
-        var click = 0;
-    function add(){
-    click += 1;
-    }
-  $("#clickert").innerHTML = click
-  $("clicker").click(function(){
-     add();
-  });
     //Ok
     var styleItem = document.createElement("style");
 styleItem.type = "text/css";
@@ -123,6 +115,14 @@ document.head.appendChild(styleItem);
   behavior: 'smooth'
     }, 1000);
 });
+        var click = 0;
+    function add(){
+    click += 1;
+    }
+  $("#clickert").innerHTML = click
+  $("clicker").click(function(){
+     add();
+  });
   </script>
 </html>
 <!---MooJax ez>
