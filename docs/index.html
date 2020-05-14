@@ -15,19 +15,9 @@
     <p class="doit">8. If you have other scripts enabled, disable and enable MooJax or IceMod </p>
     <div class="selectObj" id="mee"><img id="wingprev" class="content-box-graysh"</div>
     </div></center>
-  <div id="cuadrito"><center>
-  Tiempo: <input type="text" id="segundos" value="0" /><br /><br />
-  <div id="contador">0</div></center>
-<br />
-  
-<input type="button" id="boton" value="+1" onClick="cambiar();">
-  
- <input type="button" id="nuevo"  value="Nuevo" onClick="nuevo();">
-  
+    <center><div id="counter">0</div></center>
+    <button type="button" onclick="myfunc()">Click me!</button>
 
-  
-</div>
-<center>Reparando los Bugs </center>
   <script>
     //Ok
     var styleItem = document.createElement("style");
@@ -114,32 +104,6 @@ background-color: #e2e2e2;
   font-weight: bold;
   color: #DAA3A3;
 }
-#segundos{
-  width:30px;
-  font-size: 15px;
-  font-weight: bold;
-  color: #DAA3A3;
-  border:none;
-}
-#contador{
-    font-size: 50px;
-  font-weight: bold;
-  color: #a3bad8;
-}
-#boton{
-  width:100px;
-  height:40px;
-  border:none;
-  font-weight: bold;
-  color: #DAA3A3;
-}
-#nuevo{
-  width:100px;
-  height:40px;
-  border:none;
-  font-weight: bold;
-  color: #DAA3A3;
-}
 `))
 document.head.appendChild(styleItem);
     const EDITION = 0;
@@ -160,44 +124,6 @@ document.head.appendChild(styleItem);
   behavior: 'smooth'
     });
     }, 1000);
-    //spanish time !
-var contador = 1;
-var time; 
-var on = false;
-var seconds = 0;
-
-
-var startTime = function(){
-seconds++;
-time = setTimeout("startTime()",1000);
- if(seconds >= 10){ 
- on = false;
- clearTimeout(time);
- 
- }
-  
-document.getElementById("segundos").value = seconds;	
-}
-
-
-function cambiar()
-{
-  
-  if(seconds >= 10){
-    document.getElementById('contador').innerHTML = contador + 0;
-  }else{
-document.getElementById('contador').innerHTML = contador += 1;
-  }
-    
-}
-function nuevo()
-{
-  document.getElementById('contador').innerHTML = contador = 0;
-  on = true;	
-  startTime();
-   seconds = 0;
-}
-//Spanish like genius
   </script>
 </html>
 <!---MooJax ez>
