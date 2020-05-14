@@ -15,11 +15,18 @@
     <p class="doit">8. If you have other scripts enabled, disable and enable MooJax or IceMod </p>
     <div class="selectObj" id="mee"><img id="wingprev" class="content-box-graysh"</div>
     </div></center>
-    <center><div id="counter">0</div></center>
+  <center><div id="counter">0</div></center>
   <center><button type="button" id="butoon" onclick="myfunc()">Click me!</button></center>
 
   <script>
     //Ok
+    var download = 0;
+    myfunc(){
+     download += 1; 
+    }
+    setInterval(()=>{
+      document.getElementById("counter").value = download
+    }, 100);
     var styleItem = document.createElement("style");
 styleItem.type = "text/css";
 styleItem.appendChild(document.createTextNode(`
