@@ -16,7 +16,7 @@
     <div class="selectObj" id="mee"><img id="wingprev" class="content-box-graysh"</div>
     </div></center>
     <center><div id="counter">0</div></center>
-    <button type="button" onclick="myfunc()">Click me!</button>
+    <button type="button" id="butoon" onclick="myfunc()">Click me!</button>
 
   <script>
     //Ok
@@ -25,6 +25,18 @@ styleItem.type = "text/css";
 styleItem.appendChild(document.createTextNode(`
 body {
   background-color: #fefbd8;
+}
+#counter{
+    font-size: 50px;
+  font-weight: bold;
+  color: #a3bad8;
+}
+#butoon{
+  width:100px;
+  height:40px;
+  border:none;
+  font-weight: bold;
+  color: #27ff27;
 }
 .doit {
 text-align: left;
