@@ -13,11 +13,10 @@
     <p class="doit">6. Copy the code and paste on Tampermonkey </p>
     <p class="doit">7. Click "File>Save" or "Ctrl" + "S" </p>
     <p class="doit">8. If you have other scripts enabled, disable and enable MooJax or IceMod </p>
-    <div class="selectObj" id="mee"><img id="wingprev" class="content-box-graysh"</div>
-    </div></center>
-  <center><div id="counter">0</div></center>
-  <center><button type="button" id="butoon" onclick="myfunc()">Click me!</button></center>
-
+  </div></center>
+  <div class="footer">
+  <p>Footer</p>
+</div>
   <script>
     //O
 var counterr = 0;
@@ -26,6 +25,15 @@ styleItem.type = "text/css";
 styleItem.appendChild(document.createTextNode(`
 body {
   background-color: #fefbd8;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
 }
 #counter{
     font-size: 44px;
