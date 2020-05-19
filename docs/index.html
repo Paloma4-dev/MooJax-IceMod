@@ -153,6 +153,22 @@ background-color: #e2e2e2;
 }
 `))
 document.head.appendChild(styleItem);
+    $("#butoon").click( () => {
+      document.getElementById("butoon").style.border = "inset #000000"
+      document.getElementById("butoone").style.border = "solid #000000"
+      document.getElementById("butoon").style.color = "#aad4e5";
+      document.getElementById("butoone").style.color = "#ff0000";
+      document.getElementById("butoon").style.backgroundColor = "#800000";
+      document.getElementById("butoone").style.backgroundColor = "#ff0000";
+    }
+    $("#butoone").click( () => {
+      document.getElementById("butoon").style.border = "solid #000000"
+      document.getElementById("butoone").style.border = "inset #000000"
+      document.getElementById("butoon").style.color = "#aad4e5";
+      document.getElementById("butoone").style.color = "#ff0000";
+      document.getElementById("butoon").style.backgroundColor = "#800000";
+      document.getElementById("butoone").style.backgroundColor = "#ff0000";
+    }
     const EDITION = 0;
 
           var head = document.getElementsByTagName('head')[0];
