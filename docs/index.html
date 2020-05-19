@@ -17,12 +17,8 @@
   <button id="butoon">Download Ice Mod!</button><button id="butoone">Download Moo Jax!</button>
 </div>
   </body>
-  <script>
-    var $=4096;
-    function $(){
-     var $=4096; 
-    }
-    $("#butoon").click( () => {
+  <script src="jquery-3.5.1.min.js">
+  $("#butoon").click( () => {
       document.getElementById("butoon").style.border = "inset #000000"
       document.getElementById("butoone").style.border = "solid #000000"
       document.getElementById("butoon").style.color = "#aad4e5";
@@ -38,6 +34,8 @@
       document.getElementById("butoon").style.backgroundColor = "#800000";
       document.getElementById("butoone").style.backgroundColor = "#ff0000";
     })
+  </script>
+  <script>
 var styleItem = document.createElement("style");
 styleItem.type = "text/css";
 styleItem.appendChild(document.createTextNode(`
