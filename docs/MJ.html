@@ -17,6 +17,20 @@
   <button onclick="window.open('https://www.youtube.com/channel/UCIQwReJ-GNa2-fmO5QF2tBQ?sub_confirmation=1')" class="Button-Sider">Coder #1</button>
   <button onclick="window.open('https://www.youtube.com/channel/UCrZVnif0yPniQfdwvdMgf_Q?sub_confirmation=1')" class="Button-Sider">Coder #2</button>
 </div>
+<div id="info">
+</div>
+<script>
+  const EDITION = 0;
+
+          var head = document.getElementsByTagName('head')[0];
+          var icon = document.createElement('link');
+
+          icon.setAttribute('type', 'image/png');
+          icon.setAttribute('rel', 'shortcut icon');
+
+                if (EDITION == 0) icon.setAttribute('href', 'https://i.imgur.com/hkMSocA.png');
+          head.appendChild(icon);
+</script>
 <style>
 .header {
   position: fixed;
