@@ -1,6 +1,7 @@
 <html>
 <body>
   <title> MooJax - IceMod </title>
+<button id="Dialog" onclick="Hide()" style="display : block">New updates cooming soon! stay alert!</button>
 <center><div id="first" align="right" class="content-box-gray" style="display:block">
   <h1 class="downoald"><u>MooJax & IceMod </u></h1>
     <h6> MooJax has been deleted from greasyfork.But no worry, here u have moojax code and steps for download.</h6>
@@ -25,6 +26,9 @@
 </div>
   </body>
   <script>
+    function Hide(){
+     document.getElementById("Dialog").style.display = "none"; 
+    }
     document.getElementById("mjax").style.display = "none";
     document.getElementById("imod").style.display = "none";
     document.getElementById("first").style.display = "block";
