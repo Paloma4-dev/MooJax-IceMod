@@ -5,11 +5,11 @@
 <div id="lefter" class="lefter">
   <br><br>
   <button id="Jackob" class="Button-Sider" style="color: yellow; cursor: default">MooJax</button>
-  <button id="info-b" class="Button-Sider">Info</button>
-  <button id="code-b" class="Button-Sider">Code</button>
-  <button id="vers-b" class="Button-Sider">History</button>
-  <button id="down-b" class="Button-Sider">Download</button>
-  <button id="phot-b" class="Button-Sider">Thumbnails</button>
+  <button onmouseenter="hover(this)" onmouseenter="nohover(this)" id="info-b" class="Button-Sider">Info</button>
+  <button onmouseenter="hover(this)" onmouseenter="nohover(this)" id="code-b" class="Button-Sider">Code</button>
+  <button onmouseenter="hover(this)" onmouseenter="nohover(this)" id="vers-b" class="Button-Sider">History</button>
+  <button onmouseenter="hover(this)" onmouseenter="nohover(this)" id="down-b" class="Button-Sider">Download</button>
+  <button onmouseenter="hover(this)" onmouseenter="nohover(this)" id="phot-b" class="Button-Sider">Thumbnails</button>
   <br><br>
   <br><br>
   <button onclick="window.open('https://jack-lal.github.io/MooJax-IceMod')" class="Button-Sider">Main Menu</button>
@@ -17,6 +17,12 @@
   <button onclick="window.open('https://www.youtube.com/channel/UCIQwReJ-GNa2-fmO5QF2tBQ?sub_confirmation=1')" class="Button-Sider">Coder #1</button>
   <button onclick="window.open('https://www.youtube.com/channel/UCrZVnif0yPniQfdwvdMgf_Q?sub_confirmation=1')" class="Button-Sider">Coder #2</button>
 </div>
+function hover(id){
+id.style.backgroundColor = "#262626"
+}
+functoin nohover(id){
+id.style.backgroundColor = "#333"
+}
 <br><br><br><br><br><br>
 <center>
 <div style="float: right; text-align: left; padding: 10px 10px; overflow: auto;" class="box-grasys" id="infoTwo">
