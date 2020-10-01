@@ -139,16 +139,10 @@ function enableI(){
 	setInterval(()=>{
 	if(ezsa("info")){
 	document.getElementById("info-b").style.backgroundColor = "#262626"
-	document.getElementById("vers-b").style.backgroundColor = "#333"
-	document.getElementById("down-b").style.backgroundColor = "#333"
 	} else if(ezsa("logs")){
 	document.getElementById("vers-b").style.backgroundColor = "#262626"
-	document.getElementById("info-b").style.backgroundColor = "#333"
-	document.getElementById("down-b").style.backgroundColor = "#333"
 	} else if(ezsa("download")){
 	document.getElementById("down-b").style.backgroundColor = "#262626"
-	document.getElementById("vers-b").style.backgroundColor = "#333"
-	document.getElementById("info-b").style.backgroundColor = "#333"
 	}
 	}, 0);
 function ezsa(id) {
