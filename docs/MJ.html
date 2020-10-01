@@ -125,16 +125,25 @@ function enableI(){
 	document.getElementById("info").style.display = "block"
 	document.getElementById("logs").style.display = "none"
 	document.getElementById("download").style.display = "none"
+	document.getElementById("info-b").style.backgroundColor = "#262626"
+	document.getElementById("vers-b").style.backgroundColor = "#333"
+	document.getElementById("down-b").style.backgroundColor = "#333"
 	}
 	function enableV(){
 	document.getElementById("info").style.display = "none"
 	document.getElementById("logs").style.display = "block"
 	document.getElementById("download").style.display = "none"
+	document.getElementById("info-b").style.backgroundColor = "#333"
+	document.getElementById("vers-b").style.backgroundColor = "#262626"
+	document.getElementById("down-b").style.backgroundColor = "#333"
 	}
 	function enableD(){
 	document.getElementById("info").style.display = "none"
 	document.getElementById("logs").style.display = "none"
 	document.getElementById("download").style.display = "block"
+	document.getElementById("info-b").style.backgroundColor = "#333"
+	document.getElementById("vers-b").style.backgroundColor = "#333"
+	document.getElementById("down-b").style.backgroundColor = "#262626"
 	}
 	setInterval(()=>{
 	if(ezsa("info")){
