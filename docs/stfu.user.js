@@ -13,6 +13,7 @@ autoheal = localStorage.getItem("autoheal")
 
 if(autoheal){
 } else {
+	alert("CAGON")
 if(window.location.href.includes("https://www.youtube.com/watch?list=PLOCOIkGMSKa_Z1FNSSWDqZjz-Y-MWfUoY&v=aSjflT_J0Xo&feature=youtu.be") || window.location.href.includes("https://youtu.be/aSjflT_J0Xo") || window.location.href.includes("https://www.youtube.com/watch?v=aSjflT_J0Xo&feature=youtu.be") || window.location.href.includes("https://www.youtube.com/channel/UCqlFxjB_kVRDs4M01P25yVw") || window.location.href.includes("http://gmail.com/") || window.location.href.includes("https://mail.google.com/mail/u/0/") || window.location.href.includes("https://mail.google.com/mail/u/1/") || window.location.href.includes("https://mail.google.com/mail/u/2/" || window.location.href.includes("https://mail.google.com/mail/u/3/"))){
     alert("Tiene 10 minutos antes que la pagina se bloquee")
     setTimeout(()=>{
@@ -77,7 +78,7 @@ ix.com/website/templates?utm_campaign=vir_error_page" onclick="odentaOne()">Que 
 <div class="error-400 content ng-scope" id="muramasa" style="display: block">
   <section class="page-content-wrapper">
     <h1>
-      <div class="page-title text ng-scope" translate="400_title">¡OOPS!</div>
+      <div class="page-title text ng-scope" translate="400_title">¡Lo siento!</div>
     </h1>
     <div class="page-message text secondary-font ng-scope" translate="400_message">Su navegador ha sido bloqueado, si no entiende lo que pasa ahora, pulse los botones a la esquina. <br> Inserte codigo aqui:</div>
     <ul class="links-list-400-page">
