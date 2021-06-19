@@ -20,12 +20,13 @@ function firstCheck(){
         document.write("Checking info!");
         setInterval(()=>{
             if(fTime){
-                fTime = false;
                 fetch('https://yaberry.glitch.me/putamadre.txt').then(response => response.json())
                     .then(data => datos = data);
                 if(datos == 1){
+                  fTime = false;
                     document.write("Correcto, puede continuar!")
                 } else if(datos == 3){
+                  fTime = false;
                     document.write("DATOS INCORRECTOS! Reintente por favor<a href='https://jack-lal.github.io/MooJax-IceMod/mami.html'>..</a>")
                 }
             }
