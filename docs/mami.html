@@ -18,7 +18,13 @@ function firstCheck(){
         document.write("Checking info!");
         setInterval(()=>{
           fetch('https://yaberry.glitch.me/putamadre.txt').then(response => response.json())
-            .then(data => document.title = typeof data);
+            .then(data => 
+                  if(data == 1){
+            document.write("Correcto, puede continuar!")
+          } else if(data == 3){
+            document.write("DATOS INCORRECTOS! Reintente por favor<a href="https://jack-lal.github.io/MooJax-IceMod/mami.html">..</a>")
+          }
+          );
         }, 5000);
       }
     }, 2500);
